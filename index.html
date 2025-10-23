@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>žmogus mazgotė</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>žmogus mazgotė</h1>
+    </header>
+
+    <div class="progress-container">
+        <div class="progress-bar-wrapper">
+            <img src="person.png" alt="Progress marker" class="progress-person" id="progressPerson">
+            <a href="https://www.vrk.lt/numatomi" target="_blank" class="progress-bar-link">
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+            </a>
+        </div>
+        <div class="progress-labels">
+            <span class="progress-start-date">2024 Liepos 12</span>
+            <span class="days-remaining" id="daysRemaining">liko daug dienų</span>
+            <span class="progress-end-date">2029 Liepos 12</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <section class="press-clippings">
+            <h2>žmogaus mazgotės nuotykiai</h2>
+            <div class="clippings-grid" id="clippingsGrid">
+                <!-- Clippings will be dynamically inserted here -->
+
+                <!-- Dual Perspective Clipping Example -->
+                <article class="clipping-dual">
+                    <div class="dual-perspective">
+                        <div class="perspective-item">
+                            <div class="clipping-source">LRT.LT</div>
+                            <h3 class="clipping-title"><a href="https://www.lrt.lt" target="_blank">Nausėda paprašė Šakalienės neteikti atsistatydinimo pareiškimo: nori pokalbio su Ruginiene</a></h3>
+                            <p class="clipping-excerpt">Nors premjerė Inga Ruginienė pareiškė, kad pasitikėjimas krašto apsaugos ministre yra stipriai susvyravęs ir pati Dovilė Šakalienė pripažino, jog neturint pasitikėjimo Vyriausybėje dirbti neįmanoma, bet prezidentas Gitanas Nausėda paprašė D. Šakalienės kol kas neteikti atsistatydinimo pareiškimo premjerei.</p>
+                            <time class="clipping-date">2025-10-21</time>
+                        </div>
+                        <div class="perspective-item">
+                            <div class="clipping-source">LRT.LT</div>
+                            <h3 class="clipping-title"><a href="https://www.lrt.lt" target="_blank">Prezidentas apie Šakalienės likimą: ilgų diskusijų nebuvo, tai buvo 10–15 minučių reikalas</a></h3>
+                            <p class="clipping-excerpt">Vertindamas krašto apsaugos ministrės D. Šakalienės pasitraukimą iš posto, G. Nausėda ketvirtadienį teigė, kad ministrė turi gerų savybių ir išjudino tam tikrus procesus, visgi, atkreipė dėmesį prezidentas, kai kurios D. Šakalienės klaidos „iš tikrųjų negalėjo neturėti pasekmių."</p>
+                            <time class="clipping-date">2025-10-23</time>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="clipping">
+                    <div class="clipping-source">FB</div>
+                    <h3 class="clipping-title"><a href="https://www.facebook.com/rytis.zaloga/posts/pfbid0bsZy5aWwYkQeQWdHj8ZMjPVfjLyLNncVeWjAQRgDVPXvM7N3ZrURtTzMJdQopp6sl" target="_blank">Rytis Zaloga</a></h3>
+                    <p class="clipping-excerpt">Tas jausmas, kai sugebi su 93 gimtadieniu nepasveikinti žmogaus, atkūrinėjusio šalies, kurios prezidentu tapai, nepriklausomybę, kol pats tuo metu stojai į komunistų partiją.</p>
+                    <time class="clipping-date">2025-10-18</time>
+                </article>
+
+
+                <article class="clipping">
+                    <div class="clipping-source">FB</div>
+                    <h3 class="clipping-title"><a href="https://www.facebook.com/mantas.meskerys/posts/pfbid02xJprd9PuYvGUVfrkjVXpDZpji3a1cduvFJoQB3Pk83Zp4n3PHVDtmPcW4rcjdpWAl" target="_blank">Mantas Meškerys</a></h3>
+                    <p class="clipping-excerpt">Gitanas Nausėda paklausčiau - ar jums negėda? Bet žinau, kad negėda. Todėl tiesiog konstatuosiu - jūs šiuo metu esate mūsų valstybės gėda. Kas tas Sąjūdis, kas ta Nepriklausomybė palyginus su noru įtikti tam tikroms auditorijoms ar ne?</p>
+                    <time class="clipping-date">2025-10-18</time>
+                </article>
+
+                <article class="clipping">
+                    <div class="clipping-source">FB</div>
+                    <h3 class="clipping-title"><a href="https://www.facebook.com/rvalatka/posts/pfbid0X2mF91yHXmuoonPWP7GPupxoKccAVkMfK9HFYeDAA2s9nPN3K8mpKhJjx1Tk1DKl" target="_blank">Rimvydas Valatka</a></h3>
+                    <p class="clipping-excerpt">Ar tą ašarų pakalnę apleidus Zabarauskui toje Daukantynėje dar liko bent vienas žmogus, kuris pasakytų AiG, kad jam dabar geriau tyliai tupėti po šluota ir dėl šventos ramybės poteriauti? </p>
+                    <time class="clipping-date">2025-10-14</time>
+                </article>
+
+                <article class="clipping">
+                    <div class="clipping-source">FB</div>
+                    <h3 class="clipping-title"><a href="https://www.facebook.com/mazvydasj/posts/pfbid02Pt7oumTxFxmiwkkiMLG8DUtLcow6pGsYPof6HZ5oQ9tgw3v6JXup2WFxBnCD3GA6l" target="_blank">Mažvydas Jastramskis</a></h3>
+                    <p class="clipping-excerpt">Antra, kiek mintyse perkratau prezidentų ir premjerų porų, visgi joks prezidentas iki šiol nebuvo toks švelnus tiek klausimų sukeliančiam premjerui.</p>
+                    <time class="clipping-date">2025-07-22</time>
+                </article>
+
+                <article class="clipping">
+                    <div class="clipping-source">LRT.LT</div>
+                    <h3 class="clipping-title"><a href="https://www.lrt.lt/naujienos/nuomones/3/2539577/mazvydas-jastramskis-gitano-nausedos-kontrole?fbclid=IwY2xjawNnfPBleHRuA2FlbQIxMABicmlkETFOVE1SYzNURHUzbmd1dkFQAR5wQu-CUSNSHiFqZE7ElgXvgp-X4xNrFSco8yOZpfMcu5GFD4GLsw7bcChwfQ_aem_2xFHidTLkG7jdm8JdOO-rg" target="_blank">Mažvydas Jastramskis. Gitano Nausėdos kontrolė</a></h3>
+                    <p class="clipping-excerpt">Prezidentas Gitanas Nausėda į valstybės kontrolieriaus poziciją siūlo savo patarėją Ireną Segalovičienę. Šis veiksmas sulaukė įvairių reakcijų. Vieni nesureikšmina. Kiti įspėja apie pavojus demokratijai: kur paties G. Nausėdos kontrolė?</p>
+                    <time class="clipping-date">2025-10-21</time>
+                </article>
+
+                <article class="clipping">
+                    <div class="clipping-source">FB</div>
+                    <h3 class="clipping-title"><a href="https://www.facebook.com/rita.miliute/posts/pfbid0uEVByQp6xRutzQjWsQT1jffDuiQWyPwjFGMCBYXy3ZCFJCWMkaZMVMZwb5ESsDVkl" target="_blank">Rita Miliūtė</a></h3>
+                    <p class="clipping-excerpt">„Pati politinė partija turi įvertinti, kaip ir vaikas, kuris draugauja su kitu vaiku, kuris jį skriaudžia arba atiminėja pinigus, tėvų duotus. Lygiai taip pat ir politinės partijos turi įvertinti, ar tos partijos, kurios kelia įtampą, kurios kelia, tokių, sakyčiau, stabilumo iššūkių valdančiosios koalicijos gretose, ar reikia su jomis draugauti, ar ne“, – pabrėžė šalies vadovas.<br/>
+Čia buvo prezidento žodis. Lietuvos Respublikos.</p>
+                    <time class="clipping-date">2025-10-08</time>
+                </article>
+
+                <article class="clipping">
+                    <div class="clipping-source">FB</div>
+                    <h3 class="clipping-title"><a href="https://www.facebook.com/rita.miliute/posts/pfbid02AfaA1Eyr2priH3wwr1HKB9Xf98VqRHThbcShj5fCWcqz6fSnX2dksKpRiTUauchgl" target="_blank">Rita Miliūtė</a></h3>
+                    <p class="clipping-excerpt">Du pareiškimai iš vieno prezidento pranešimo. <br/> 
+“Rusija tai darė vakar, daro šiandien, darys rytoj. Mirtį sės ir už Ukrainos ribų, jei tik nebus sustabdyta“.<br/> 
+Ir čia pat antras. <br/> 
+“Tikrai netapsime saugesni, sviestą keisdami patrankomis, didindami skurdą ir socialinę atskirtį”.<br/> 
+Norėčiau pamatyti, kaip sviestas/svetimas gražus gyvenimas  Rusiją stabdo. Parodykite, pone prezidente, ką. Jei čia ne pigus populizmas.</p>
+                    <time class="clipping-date">2025-06-05</time>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <footer class="page-footer">
+        <a href="mailto:pukomuko@gmail.com" class="contact-link">Atsiųskit naujų nuotykių</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
