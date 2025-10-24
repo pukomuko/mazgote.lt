@@ -125,7 +125,7 @@ body {
 
 .press-clippings h2 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     color: #333;
     text-align: center;
 }
@@ -133,6 +133,7 @@ body {
 .clippings-grid {
     column-count: 3;
     column-gap: 2rem;
+    padding-top: 2rem;
 }
 
 .clipping {
