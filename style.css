@@ -136,6 +136,23 @@ body {
     padding-top: 2rem;
 }
 
+/* JS masonry: cards placed in DOM order into the shortest column */
+.clippings-grid.masonry {
+    column-count: auto;
+    display: flex;
+    align-items: flex-start;
+}
+
+.masonry-column {
+    flex: 1;
+    min-width: 0;
+}
+
+.masonry .clipping,
+.masonry .clipping-dual {
+    display: block;
+}
+
 .clipping {
     border: 1px solid #e0e0e0;
     border-radius: 10px;

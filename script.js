@@ -42,11 +42,51 @@ function updateProgress() {
 updateProgress();
 setInterval(updateProgress, 1000 * 60 * 60); // Update every hour
 
+// Masonry layout: keeps chronological order left to right, newest on top.
+// Each clipping (in DOM order) goes into the currently shortest column.
+let masonryItems = [];
+let masonryColumnCount = 0;
+
+function getColumnCount() {
+    if (window.matchMedia('(max-width: 768px)').matches) return 1;
+    if (window.matchMedia('(max-width: 1024px)').matches) return 2;
+    return 3;
+}
+
+function layoutMasonry(force) {
+    const grid = document.getElementById('clippingsGrid');
+    const count = getColumnCount();
+    if (!force && count === masonryColumnCount) return;
+    masonryColumnCount = count;
+
+    if (!masonryItems.length) {
+        masonryItems = Array.from(grid.querySelectorAll('.clipping, .clipping-dual'));
+    }
+
+    grid.classList.add('masonry');
+    grid.innerHTML = '';
+
+    const columns = [];
+    for (let i = 0; i < count; i++) {
+        const column = document.createElement('div');
+        column.className = 'masonry-column';
+        grid.appendChild(column);
+        columns.push(column);
+    }
+
+    masonryItems.forEach(item => {
+        const shortest = columns.reduce((a, b) => (b.offsetHeight < a.offsetHeight ? b : a));
+        shortest.appendChild(item);
+    });
+}
+
+layoutMasonry(true);
+window.addEventListener('resize', () => layoutMasonry(false));
+window.addEventListener('load', () => layoutMasonry(true));
+
 // Optional: Function to dynamically add clippings
 // You can call this function to add new clippings programmatically
 function addClipping(source, title, url, excerpt, date) {
-    const clippingsGrid = document.getElementById('clippingsGrid');
-
     const article = document.createElement('article');
     article.className = 'clipping';
 
@@ -57,7 +97,8 @@ function addClipping(source, title, url, excerpt, date) {
         <time class="clipping-date">${date}</time>
     `;
 
-    clippingsGrid.appendChild(article);
+    masonryItems.push(article);
+    layoutMasonry(true);
 }
 
 // Function to add dual-perspective clippings (two views of the same story)
@@ -65,8 +106,6 @@ function addDualPerspectiveClipping(
     source1, title1, url1, excerpt1, date1,
     source2, title2, url2, excerpt2, date2
 ) {
-    const clippingsGrid = document.getElementById('clippingsGrid');
-
     const article = document.createElement('article');
     article.className = 'clipping-dual';
 
@@ -87,7 +126,8 @@ function addDualPerspectiveClipping(
         </div>
     `;
 
-    clippingsGrid.appendChild(article);
+    masonryItems.push(article);
+    layoutMasonry(true);
 }
 
 // Example: How to add clippings via JavaScript
